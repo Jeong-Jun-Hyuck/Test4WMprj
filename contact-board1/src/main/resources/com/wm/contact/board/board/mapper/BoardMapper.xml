@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.worksmobile.contact.intern.board.mapper.BoardMapper">
+	<resultMap id="board" type="com.worksmobile.contact.intern.board.model.Board">
+	  <result property="registerDate" column="reg_date"/>
+	  <result property="id" column="id"/>
+	  <result property="title" column="title"/>
+	  <result property="registerDate" column="reg_date"/>
+	  <result property="contents" column="content"/>
+	  <result property="count" column="count"/>
+	</resultMap>	
+	<select id="selectBoardById" resultMap="board">
+		SELECT *
+		FROM contact_board
+		WHERE board_Id = #{id}
+	</select>
+	
+	<select id="selectAllboard" resultMap="board">
+		SELECT *
+		FROM contact_board
+	</select>
+	
+	<insert id="insertBoard">
+		INSERT INTO contact_board(board_Date,board_Count,board_Title,board_Contents)
+		VALUES (#{date},#{count},#{title},#{contents})
+	</insert>
+	<delete id="deleteBoardById">
+		DELETE
+		FROM contact_board
+		WHERE board_id=#{id}
+	</delete>
+	<select id="getBoardCountById" resultType="int">
+		SELECT board_Count
+		FROM contact_board
+		WHERE board_Id = #{id}
+	</select>
+	<update id="modifyBoard" >
+		UPDATE contact_board
+		SET board_Title=#{title},board_Contents=#{contents},board_Date=#{date}
+		WHERE board_Id = #{id}
+	</update>
+</mapper>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: contact-board1
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: wnsgu
+Implementation-Vendor-Id: com.wm.contact.board
+Build-Jdk: 1.8.0_101
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/com.wm.contact.board
+Created-By: Maven Integration for Eclipse
+
